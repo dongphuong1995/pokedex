@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-light bg-light justify-content-between">
-    <router-link to="/Home" class="navbar-brand">Navbar</router-link>
-    <router-link to="/" class="navbar-brand">Detail</router-link>
+    <router-link to="/" class="navbar-brand">Navbar</router-link>
+    <router-link to="/Detail" class="navbar-brand">Detail</router-link>
 
     <form class="form-inline">
       <input
@@ -32,7 +32,7 @@ export default {
         this.$store.dispatch(GET_POKEMONS);
         return;
       }
-      this.$store.dispatch(SEARCH_POKEMONS, this.keySearch);
+      this.$store.dispatch(SEARCH_POKEMONS, this.keySearch.toLowerCase());
     }
   }
 };

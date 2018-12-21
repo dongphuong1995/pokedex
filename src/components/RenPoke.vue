@@ -3,10 +3,12 @@
     <img :src="Url" alt>
     <br>
     <br>
-    <p>PokeMon Name: {{ pokemon.name }}</p>
+    <router-link :to="`pokemon/${pokemon.name}`">
+      <p>PokeMon Name: {{ pokemon.name }}</p>
+    </router-link>
   </div>
 </template>
-
+    //? Truyền đưỡng dẫn động . theo router indexjs
 <script>
 export default {
   name: "RenPoke",
