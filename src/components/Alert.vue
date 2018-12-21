@@ -12,6 +12,7 @@ export default {
             type: String,
             default: 'primary',
         },
+        // !Type not defind
         message: {
             type: String,
             default: '',

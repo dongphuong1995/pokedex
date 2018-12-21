@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar navbar-light bg-light justify-content-between">
     <router-link to="/" class="navbar-brand">Navbar</router-link>
-    <router-link to="/Detail" class="navbar-brand">Detail</router-link>
+    <router-link to="/about" class="navbar-brand">About</router-link>
 
     <form class="form-inline">
       <input

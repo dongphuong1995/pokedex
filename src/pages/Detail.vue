@@ -7,9 +7,7 @@
       <template v-else>
         <div class="row text-center border">
           <div class="col-4">
-            <img 
-            :src="detailPokemonState.pokemon.sprites.front_default"
-            >
+            <img src="https://pokemonletsgo.pokemon.com/assets/img/common/char-eevee.png" alt="">
           </div>
           <div class="col-8">
             <p>Pokemon Name : {{ detailPokemonState.pokemon.name }}</p>
@@ -21,9 +19,11 @@
 </template>
 
 <script>
+
 import Loading from "../components/Loading";
 import Alert from "../components/Alert";
 import { GET_POKEMON } from "../store/actionTypes";
+
 export default {
   name: "Detail",
   components: {
@@ -31,7 +31,7 @@ export default {
     Alert
   },
   created() {
-    this.$store.dispatch(GET_POKEMON, this.prams.id);
+    this.$store.dispatch(GET_POKEMON, this.$router.params.id);
   },
   computed: {
     detailPokemonState: function() {

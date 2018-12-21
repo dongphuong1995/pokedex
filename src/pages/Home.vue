@@ -5,7 +5,7 @@
       
     />
     <Loading v-if="pokemonState.isLoading"/>
-    <div class="row" v-else>
+    <div class="row justify-content-center " v-else>
       <RenPoke
         v-for="(pokemon, index) in pokemonState.pokemons"
         :pokemon="pokemon"

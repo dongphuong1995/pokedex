@@ -12,10 +12,11 @@ export default {
   },
   actions: {
     [GET_POKEMON]: ({ commit }, pokemonId) => {
-      context.commit(GET_POKEMON_PENDING);
+      commit(GET_POKEMON_PENDING);
       fetch(`https://cors-anywhere.herokuapp.com/https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+      // ? success json không dẫn đến resuls ??
         .then(result => result.json())
-        .then(json => commit(GET_POKEMON_SUCCESS, json.results))
+        .then(json => commit(GET_POKEMON_SUCCESS, json))
         .catch(error => commit(GET_POKEMON_FAILED, error));
     },
   },
@@ -24,8 +25,8 @@ export default {
       state.pokemon = pokemon;
       state.isLoading = false;
     },
-    [GET_POKEMON_PENDING]: (state, boolean = true) => {
-      state.isLoading = boolean;
+    [GET_POKEMON_PENDING]: (state) => {
+      state.isLoading = true;
     },
     [GET_POKEMON_FAILED]: (state, error) => {
       state.error = error;
